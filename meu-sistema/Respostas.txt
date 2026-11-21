@@ -1,0 +1,25 @@
+Questão 1:
+
+a) FROM python:3.11-slim
+b) WORKDIR /app
+c) COPY requirements.txt
+   RUN pip install -r requirements
+d) COPY . . 
+e) EXPOSE 5000
+f) CMD ["python","app.py"]
+
+Questão 2:
+
+a) docker build -t meu-sistema:1.0 .
+b) docker run -d -p 8080:5000 --name sistema-web meu-sistema:1.0
+c) docker ps
+d) docker logs sistema-web
+e) docker stop sistema-web
+f) docker rm sistema-web
+
+Questão 3:
+
+a) Um container é ambiente isolado onde um processo pode ser executado, Uma imagem Docker é um pacote somente leitura, usado como base para criar containers.
+
+b) Isso aconteceu porque o container foi criado utilizando uma imagem Docker antiga, que ainda contém a versão antiga do arquivo app.py, As alterações realizadas no código não são atualizadas automaticamente. 
+Para resolver o problema o aluno pode construir a imagem novamente, parar o container antigo, remover o container antigo ou criar um novo container utilizando a imagem atualizada.
